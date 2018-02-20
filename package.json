@@ -6,6 +6,7 @@
   "scripts": {
     "serve-local": "webpack && firebase serve",
     "webpack": "webpack",
+    "babel": "babel src -d functions/src && babel index.js -d functions",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
