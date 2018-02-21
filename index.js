@@ -7,16 +7,17 @@ import express from 'express';
 import fs from 'fs';
 import path from 'path';
 
-// const index = new Promise((resolve, reject) => {
-//   return fs.readFile(__dirname + './index.html', 'utf8', (err, data) => {
-//     !err ? resolve(data) : reject(err);
-//   });
-// });
-const index = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8');
+const index = new Promise((resolve, reject) => {
+  return fs.readFile(path.join(__dirname, 'index.html'), 'utf8', (err, data) => {
+    !err ? resolve(data) : reject(err);
+  });
+});
+
 const app = express();
 app.get('**', (req, res) => {
   getDonaldQuotes()
-    .then((quotes) => {
+    .then(async (quotes) => {
+      await index;
       const html = renderToString(<App quotes={quotes} />);
       const finalHtml = index.replace('<!--::App::-->', html);
       res.set('Cache-Control', 'public, max-age: 600, s-maxage=1200');

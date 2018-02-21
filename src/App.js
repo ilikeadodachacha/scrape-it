@@ -7,7 +7,6 @@ function App(props) {
 
   return (
     <ul>
-      Quotes by Donald:
       {quotes}
     </ul>
   );
