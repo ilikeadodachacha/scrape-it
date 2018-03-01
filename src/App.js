@@ -1,15 +1,22 @@
 import React from 'react';
 
-function App(props) {
-  const quotes = props.quotes.messages.non_personalized.map((quote, i) => {
-    return <li key={i}>{quote}</li>
-  });
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      quotes: this.props.quotes.messages.non_personalized,
+    }
+  }
 
-  return (
-    <ul>
-      {quotes}
-    </ul>
-  );
+  render() {
+    return (
+      <ul>
+        {this.state.quotes.map((quote, i) => {
+          return <li key={i}>{quote}</li>
+        })}
+      </ul>
+    );
+  }
 }
 
 export default App;
