@@ -2,7 +2,7 @@ body {
   background-color: rgb(199, 240, 240);
   font-family: Roboto, Arial, sans-serif;
   max-width: 960px;
-  margin: 0 auto;
+  margin: 10px auto;
   padding: 0 40px
 }
 ul {
@@ -22,4 +22,20 @@ ul li {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center
+}
+
+input[type="text"] {
+  height: 22px;
+}
+
+input[type="submit"] {
+  padding: 10px;
+  background-color: #008CBA;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Search-form {
+  top: 20px;
+  font-size: 22px;
 }
