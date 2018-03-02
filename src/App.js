@@ -11,9 +11,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <form className="Search-from">
+        <form className="Search-form">
           Enter a search term: <input type="text" name="search-term"/><br/>
-          <input type="submit"/>
+          <input type="submit" value="Scrape-it"/>
         </form>
         <ul>
           {this.state.quotes.map((quote, i) => {
